@@ -1,10 +1,12 @@
-#include <iostream>
 #include "sum.h"
-using namespace std;
+#include "sum.cpp"
+#include <gtest/gtest.h>
 
-int main()
-{
-    int a = 1, b = 2;
-    cout << sum(a, b) << endl;
-    return 0;
+TEST(sum, PositiveNos) { 
+    ASSERT_EQ(3, sum(1, 2));
+}
+
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
